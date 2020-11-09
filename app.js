@@ -17,7 +17,8 @@ mongoose.connect(DB, {
 })
 
 app.get('/tours', tourController.getAllTours);
-
+app.get('/tourStats', tourController.getStats);
+app.get('/stats/:year', tourController.getMonthStats);
 
 const port = process.env.PORT||3000;
 app.listen(port, () => {
